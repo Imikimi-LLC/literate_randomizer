@@ -53,7 +53,7 @@ class Randomizer
   # * :model => MarkovModel.new :source_parser => source_parser
   def initialize(options={})
     @init_options = options
-    @randomizer = randomizer || Random.new
+    @randomizer = options[:randomizer] || Random.new
     @punctuation_distribution = options[:punctuation_distribution] || DEFAULT_PUNCTUATION_DISTRIBUTION
     @source_parser = options[:source_parser] || SourceParser.new(options)
     @model = options[:model] || MarkovModel.new(:source_parser => source_parser)
