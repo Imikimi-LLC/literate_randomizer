@@ -24,7 +24,13 @@ class SourceParser
   #     :source_material => string
   #     :source_material_file => filename
   def source_material(options=init_options)
-    options[:source_material] || File.read(options[:source_material_file] || default_source_material)
+    if options[:source_material]
+      options[:source_material]
+    elsif options[:source_material_file]
+      File.read(options[:source_material_file]
+    else
+      File.read(default_source_material)
+    end
   end
 
   # Read the source material and split it into sentences
