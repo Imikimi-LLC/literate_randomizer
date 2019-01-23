@@ -16,7 +16,7 @@ class SourceParser
 
   # read the default source material included with the gem
   def default_source_material
-    File.expand_path File.join(File.dirname(__FILE__),"..","..","data","the_lost_world_by_arthur_conan_doyle.txt")
+    File.expand_path File.join(File.dirname(__FILE__),"..","..","data","rainer-maria-rilke-poems.txt")
   end
 
   # Options:
